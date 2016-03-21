@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - oa0909@localhost" uuid="8005a56f-0462-4bcc-88ab-57bf4c93cbd1">
+    <database-info product="MySQL" version="5.6.26-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="oa0909"/>
+    <table name="department" schema="" catalog="oa0909" type="TABLE">
+      <column name="did" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="dname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="did"/>
+      <exported-key name="FK36EBCBB49C0B5B" table="user" schema="" catalog="oa0909" columns="did"/>
+      <exported-key name="user_ibfk_1" table="user" schema="" catalog="oa0909" columns="did"/>
+    </table>
+    <table name="person" schema="" catalog="oa0909" type="TABLE">
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pname" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="pid"/>
+    </table>
+    <table name="post" schema="" catalog="oa0909" type="TABLE">
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pname" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="pid"/>
+      <exported-key name="FK143B0C943767D35" table="user_post" schema="" catalog="oa0909" columns="pid"/>
+      <exported-key name="user_post_ibfk_1" table="user_post" schema="" catalog="oa0909" columns="pid"/>
+    </table>
+    <table name="user" schema="" catalog="oa0909" type="TABLE">
+      <column name="uid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="email" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="did" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="uid"/>
+      <foreign-key name="FK36EBCBB49C0B5B" columns="did" ref-table="department" ref-schema="" ref-catalog="oa0909" ref-columns="did" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_ibfk_1" columns="did" ref-table="department" ref-schema="" ref-catalog="oa0909" ref-columns="did" update-rule="0" delete-rule="2" deferrability="2"/>
+      <exported-key name="FK143B0C94378E325" table="user_post" schema="" catalog="oa0909" columns="uid"/>
+      <exported-key name="user_post_ibfk_2" table="user_post" schema="" catalog="oa0909" columns="uid"/>
+      <index name="FK36EBCBB49C0B5B" unique="false" columns="did"/>
+    </table>
+    <table name="user_post" schema="" catalog="oa0909" type="TABLE">
+      <column name="pid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="uid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="FK143B0C943767D35" columns="pid" ref-table="post" ref-schema="" ref-catalog="oa0909" ref-columns="pid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK143B0C94378E325" columns="uid" ref-table="user" ref-schema="" ref-catalog="oa0909" ref-columns="uid" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_post_ibfk_1" columns="pid" ref-table="post" ref-schema="" ref-catalog="oa0909" ref-columns="pid" update-rule="0" delete-rule="2" deferrability="2"/>
+      <foreign-key name="user_post_ibfk_2" columns="uid" ref-table="user" ref-schema="" ref-catalog="oa0909" ref-columns="uid" update-rule="0" delete-rule="2" deferrability="2"/>
+      <index name="FK143B0C943767D35" unique="false" columns="pid"/>
+      <index name="FK143B0C94378E325" unique="false" columns="uid"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OaIntegrate:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Oa.war">
+      <element id="artifact" artifact-name="OaIntegrate:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="struts2" />
+          <element id="library" level="project" name="spring2.5.5" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="json" />
+          <element id="library" level="project" name="jbpm" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

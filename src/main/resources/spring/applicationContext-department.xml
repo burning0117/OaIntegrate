@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean id="departmentDao" class="dao.DepartmentDaoImpl" scope="singleton">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+
+    <bean id="departmentService" class="service.DepartmentServiceImpl" scope="singleton">
+        <property name="departmentDao">
+            <ref bean="departmentDao"/>
+        </property>
+    </bean>
+    <bean id="departmentAction" class="action.DepartmentAction">
+        <property name="departmentService">
+            <ref bean="departmentService"/>
+        </property>
+    </bean>
+</beans>

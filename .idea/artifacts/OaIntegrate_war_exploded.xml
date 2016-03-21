@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="OaIntegrate:war exploded">
+    <output-path>$PROJECT_DIR$/target/Oa</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="OaIntegrate" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.ejb:ejb-api:3.0" />
+          <element id="library" level="project" name="Maven: junit:junit:4.12" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.3" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.35" />
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" />
+          <element id="library" level="project" name="struts2" />
+          <element id="library" level="project" name="spring2.5.5" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="json" />
+          <element id="library" level="project" name="jbpm" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/Oa/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="OaIntegrate/web/Web" />
+    </root>
+  </artifact>
+</component>
