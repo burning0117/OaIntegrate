@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * Created by burning on 2016/3/19.
  */
-public interface DepartmentDao {
+public interface DepartmentDao<T> extends BaseDao<T>{
     public void saveDepartment(Department department);
     public void updateDepartment(Department department);
     public void deleteDepartment(Serializable id, String deleteMode);

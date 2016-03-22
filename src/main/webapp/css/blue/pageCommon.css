@@ -353,7 +353,7 @@ ul {
 	width: 25%;
 	text-align: left;
 	border: 1px solid #91c0e3;
-	height:600;
+	height:600px;
 }
 
 .ItemBlockBorderList {
@@ -374,7 +374,7 @@ ul {
 	width: 79%;
 	text-align: left;
 	float:right;
-	height:600;
+	height:600px;
 	border-left:1px solid #DFDFDF
 }
 .ItemBlock2 {
@@ -439,7 +439,7 @@ A.OpenWinLink:hover {
 	padding-right:15px;
 }
 #sc{
-	height:60;
+	height:60px;
 	border:1px solid #91c0e3;
 	overflow-y:auto;
 	overflow-x:visible;

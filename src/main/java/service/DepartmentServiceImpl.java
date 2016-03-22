@@ -22,11 +22,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     DepartmentDao departmentDao;
 
     public void saveDepartment(Department department) {
-        this.departmentDao.saveDepartment(department);
+        this.departmentDao.saveEntry(department);
     }
 
     public void updateDepartment(Department department) {
-        this.departmentDao.updateDepartment(department);
+        this.departmentDao.updateEntry(department);
     }
 
     public void deleteDepartment(Serializable id, String deleteMode) {

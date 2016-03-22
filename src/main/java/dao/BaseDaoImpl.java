@@ -12,9 +12,9 @@ import java.util.Collection;
 public class BaseDaoImpl<T>implements BaseDao<T> {
     private Class classt;
     public BaseDaoImpl() {
-        ParameterizedType type= (ParameterizedType) this.getClass().getGenericSuperclass();
-        this.classt = (Class) type.getActualTypeArguments()[0];
-        System.out.println(type.getRawType());
+        ParameterizedType type= (ParameterizedType) this.getClass().getGenericSuperclass();//为泛型
+        this.classt = (Class) type.getActualTypeArguments()[0];//得到的是<>中的第一个参数
+        System.out.println(type.getRawType());//得到的是BaseDaoImpl
     }
     public HibernateTemplate hibernateTemplate;
 

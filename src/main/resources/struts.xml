@@ -8,6 +8,9 @@
 
     <!-- 把struts的请求委托给spring管理,
          作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
-    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.ui.theme" value="simple"/>
+
     <include file="struts/struts-department.xml"/>
+    <include file="struts/struts-login.xml"/>
+    <include file="struts/struts-person.xml"/>
 </struts>

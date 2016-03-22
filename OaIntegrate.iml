@@ -20,6 +20,7 @@
             <file>file://$MODULE_DIR$/src/main/resources/struts/struts-department.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/struts/struts-person.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/struts/struts-aa.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/struts/struts-login.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
