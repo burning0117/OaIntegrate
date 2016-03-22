@@ -2,6 +2,7 @@ package dao;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import javax.annotation.Resource;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
@@ -16,15 +17,8 @@ public class BaseDaoImpl<T>implements BaseDao<T> {
         this.classt = (Class) type.getActualTypeArguments()[0];//得到的是<>中的第一个参数
         System.out.println(type.getRawType());//得到的是BaseDaoImpl
     }
+    @Resource(name = "hibernateTemplate")
     public HibernateTemplate hibernateTemplate;
-
-    public HibernateTemplate getHibernateTemplate() {
-        return hibernateTemplate;
-    }
-
-    public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-        this.hibernateTemplate = hibernateTemplate;
-    }
 
     public Collection<T> getAllEntry() {
         return this.hibernateTemplate.find("from "+this.classt.getName());
@@ -39,7 +33,7 @@ public class BaseDaoImpl<T>implements BaseDao<T> {
     }
 
     public void updateEntry(T t) {
-        this.getHibernateTemplate().update(t);
+        this.hibernateTemplate.update(t);
     }
 
     public void deleteEntry(Serializable id) {
