@@ -3,8 +3,9 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
         "http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <struts>
-    <package name="department" namespace="/" extends="struts-default">
-
+    <package name="testServlet" namespace="/" extends="struts-default">
+        <action name="testServlet_test" method="test" class="test.TestServlet">
+            <result name="success">/index.jsp</result>
+        </action>
     </package>
-
 </struts>

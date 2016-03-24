@@ -20,7 +20,7 @@
 
 <!--显示表单内容-->
 <div id=MainArea>
-    <s:form action="departmentAction_update.action">
+    <form action="departmentAction_update.action">
     	<s:hidden name="did"></s:hidden>
         <div class="ItemBlock_Title1"><!-- 信息说明<DIV CLASS="ItemBlock_Title1">
         	<IMG BORDER="0" WIDTH="4" HEIGHT="7" SRC="${pageContext.request.contextPath}/css/blue/images/item_point.gif" /> 部门信息 </DIV>  -->
@@ -45,7 +45,7 @@
             <input type="image" src="${pageContext.request.contextPath}/css/images/save.png"/>
             <a href="javascript:history.go(-1);"><img src="${pageContext.request.contextPath}/css/images/goBack.png"/></a>
         </div>
-    </s:form>
+    </form>
 </div>
 </body>
 </html>

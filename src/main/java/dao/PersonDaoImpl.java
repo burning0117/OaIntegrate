@@ -1,21 +1,20 @@
 package dao;
 
 import domain.Person;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 
 /**
  * Created by burning on 2016/3/20.
  */
-public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao{
-
+@Repository("personDao")
+public class PersonDaoImpl extends BaseDaoImpl<Person> implements PersonDao<Person>{
     public void savePerson(Person person) {
-        this.getHibernateTemplate().save(person);
+        this.saveEntry(person);
     }
 
     public Person getPersonById(Serializable id) {
-        Person person= (Person) this.getHibernateTemplate().load(Person.class,1L);
-        return person;
+        return this.getEntryById(id);
     }
 }

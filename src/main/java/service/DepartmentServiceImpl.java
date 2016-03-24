@@ -2,23 +2,19 @@ package service;
 
 import dao.DepartmentDao;
 import domain.Department;
-import utils.DeleteMode;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.Serializable;
 import java.util.Collection;
 
 /**
  * Created by burning on 2016/3/19.
  */
+@Service("departmentService")
 public class DepartmentServiceImpl implements DepartmentService {
-    public DepartmentDao getDepartmentDao() {
-        return departmentDao;
-    }
 
-    public void setDepartmentDao(DepartmentDao departmentDao) {
-        this.departmentDao = departmentDao;
-    }
-
+    @Resource(name = "departmentDao")
     DepartmentDao departmentDao;
 
     public void saveDepartment(Department department) {
@@ -29,8 +25,8 @@ public class DepartmentServiceImpl implements DepartmentService {
         this.departmentDao.updateEntry(department);
     }
 
-    public void deleteDepartment(Serializable id, String deleteMode) {
-        this.departmentDao.deleteDepartment(id, deleteMode);
+    public void deleteDepartmentById(Serializable id, String deleteMode) {
+        this.departmentDao.deleteDepartmentById(id, deleteMode);
     }
 
     public Collection<Department> getAllDepartment() {

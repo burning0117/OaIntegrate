@@ -1,29 +1,26 @@
 package action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import domain.Person;
 import org.apache.struts2.ServletActionContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 import service.PersonService;
+
+import javax.annotation.Resource;
 
 /**
  * Created by burning on 2016/3/20.
  */
-public class PersonAction extends ActionSupport {
+@Controller("personAction")
+@Scope("prototype")
+public class PersonAction extends BaseAction<Person>{
+    @Resource(name = "personService")
     private PersonService personService;
-
-    public PersonService getPersonService() {
-        return personService;
-    }
-
-    public void setPersonService(PersonService personService) {
-        this.personService = personService;
-    }
-
     public String savePerson() {
         Person person = new Person();
         person.setPname("战五");
         this.personService.savePerson(person);
-        return null;
+        return "index";
     }
 
     public String getPerson() {

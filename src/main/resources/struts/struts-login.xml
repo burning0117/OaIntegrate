@@ -3,7 +3,7 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
         "http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <struts>
-    <package name="test" namespace="/" extends="struts-default">
+    <package name="login" namespace="/" extends="struts-default">
         <action name="Login" class="test.HelloWorldTest">
             <result>/struts2/login.jsp</result>
         </action>

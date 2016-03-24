@@ -12,7 +12,7 @@ import java.util.Collection;
 public interface DepartmentDao<T> extends BaseDao<T>{
     public void saveDepartment(Department department);
     public void updateDepartment(Department department);
-    public void deleteDepartment(Serializable id, String deleteMode);
+    public void deleteDepartmentById(Serializable id, String deleteMode);
     public Collection<Department> getAllDepartment();
     public Department getDepartmentById(Serializable id);
 }

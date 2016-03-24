@@ -41,7 +41,7 @@
         	<s:iterator value="#departmentList">
 				<tr class="TableDetail1 template">
 					<td><s:property value="dname"/></td>
-					<td><s:property value="description"/></td>
+					<td><s:property value="description" escape="false"/></td>
 					<td>
 						<!-- 
 							在struts2的标签中只能用ognl表达式，不能用el表达式

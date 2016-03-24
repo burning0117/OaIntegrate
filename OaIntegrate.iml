@@ -23,6 +23,7 @@
             <file>file://$MODULE_DIR$/src/main/resources/struts/struts-login.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/struts/struts-user.xml</file>
             <file>file://$MODULE_DIR$/src/main/resources/struts/struts-post.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/struts/struts-test.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>

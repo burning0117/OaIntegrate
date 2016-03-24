@@ -2,6 +2,7 @@ package dao;
 
 import domain.Department;
 import domain.User;
+import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -10,6 +11,7 @@ import java.util.Set;
 /**
  * Created by burning on 2016/3/19.
  */
+@Repository("departmentDao")
 public class DepartmentDaoImpl extends BaseDaoImpl<Department> implements DepartmentDao<Department> {
     public void saveDepartment(Department department) {
         this.saveEntry(department);
@@ -19,7 +21,7 @@ public class DepartmentDaoImpl extends BaseDaoImpl<Department> implements Depart
         this.updateEntry(department);
     }
 
-    public void deleteDepartment(Serializable id, String deleteMode) {
+    public void deleteDepartmentById(Serializable id, String deleteMode) {
         Department department = this.getDepartmentById(id);
         if ("del".equals("deleteMode.DEL")) {
             this.deleteEntry(department);

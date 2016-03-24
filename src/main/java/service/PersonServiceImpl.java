@@ -2,21 +2,18 @@ package service;
 
 import dao.PersonDao;
 import domain.Person;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.Serializable;
 
 /**
  * Created by burning on 2016/3/20.
  */
+@Service("personService")
 public class PersonServiceImpl implements PersonService {
-    public PersonDao getPersonDao() {
-        return personDao;
-    }
-
-    public void setPersonDao(PersonDao personDao) {
-        this.personDao = personDao;
-    }
-
+    @Resource(name = "personDao")
     PersonDao personDao;
 
     public void savePerson(Person person) {
